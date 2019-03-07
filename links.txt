@@ -1,0 +1,9 @@
+detect technology:
+https://www.similartech.com/
+
+
+https://stackoverflow.com/questions/41758283/using-selenium-to-test-polymer-elements-and-shadow-doms
+
+
+haproxy and keepalive
+http://dasunhegoda.com/how-to-setup-haproxy-with-keepalived/833/

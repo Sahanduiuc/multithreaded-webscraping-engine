@@ -1,0 +1,23 @@
+ final BlockingQueue<String> queue = new LinkedBlockingQueue<String>();
+    queue.put("test");// Add item here
+    ExecutorService service = Executors.newFixedThreadPool(10);// specifynumber
+                                                                // of thread
+            int numWorkers = 10;
+    for (int i = 0; i < numWorkers; i++) {
+        service.submit(new Runnable() {
+
+            @Override
+            public void run() {
+                while (!Thread.currentThread().isInterrupted()) {
+                    try {
+                        String item = queue.take();
+                        // Process item
+                    } catch (InterruptedException ex) {
+                        Thread.currentThread().interrupt();
+                        break;
+                    }
+                }
+            }
+        });
+    }
+    -----------------------------------------

@@ -1,0 +1,41 @@
+1- dont forget to shutdown the executor
+2-use caschedthreadpool instead of fixedthreadpool
+
+3-try ThreadPoolExecutor
+
+4-do refactoring
+
+5-ChromeDriverService
+https://stackoverflow.com/questions/20349844/how-chromedriverservice-is-useful-in-selenium-automation
+
+
+
+I have tried PhantomJS, HtmlUnitDriver but all have their disadvantage.
+I think Xvfv is the better solution, no need to change code just run
+ your script heedlessly. Install Xvfb
+
+sudo apt-get install xvfb
+And use this command to run mvn script heedlessly
+
+xvfb-run --server-args="-screen 0, 1624x1068x24" mvn test
+
+aliababa:   fields:ok    future:ok   twoway:notok
+simorgh24:  fields:ok    future:ok   twoway:notok
+safarme:    fields:ok    future:ok   twoway:notok   onserver:ok
+mrbilit:    fields:ok    future:ok   twoway:notok   onserver:ok
+ghasedak24: fields:ok    future:ok   twoway:notok
+flightio:   fields:ok    future:ok   twoway:notok
+samtik:     fields:ok    future:ok   twoway:notok
+sepeher360: fields:ok    future:ok   twoway:notok
+simorgh24:  fields:ok    future:ok   twoway:notok
+flytoday:   fields:ok    future:ok   twoway:notok
+tripir:     fields:ok    future:ok   twoway:notok
+zoraq:      fields:ok    future:ok   twoway:notok
+safarestan: fields:ok    future:ok   twoway:notok
+irwego:     fields:ok    future:ok   twoway:notok
+
+---------------------------------------------------------
+
+1-
+on failed--> use keepalive to set the value in redis for key="failedServerName"
+equal server2 for example.

@@ -1,0 +1,74 @@
+https://github.com/aerospike/aerospike-client-java/blob/master/examples/src/com/aerospike/examples/QueryPredExp.java
+
+
+CREATE USER farshad PASSWORD root12 ROLE read-write , sys-admin
+
+create namespace:
+https://www.aerospike.com/docs/operations/configure/index.html
+
+vi /etc/aerospike/aerospike.conf
+
+
+namespace test {
+        replication-factor 2
+        memory-size 4G
+        default-ttl 30d # 30 days, use 0 to never expire/evict.
+
+        storage-engine memory
+}
+namespace flights {
+        replication-factor 2
+        memory-size 4G
+        default-ttl 30d # 30 days, use 0 to never expire/evict.
+        storage-engine memory
+}
+
+namespace flights {
+        replication-factor 2
+        memory-size 4G
+        default-ttl 30d # 30 days, use 0 to never expire/evict.
+
+        storage-engine device { # Configure the storage-engine to use persistence
+        device /dev/<device>    # raw device. Maximum size is 2 TiB
+        write-block-size 128K   # adjust block size to make it efficient for SSDs.
+     }
+}
+
+namespace <namespace-name> {
+    memory-size <SIZE>G             # Maximum memory allocation for data and
+                                    # primary and secondary indexes.
+    storage-engine device {         # Configure the storage-engine to use
+                                    # persistence. Maximum size is 2 TiB
+    file /opt/aerospike/<filename>  # Location of data file on server.
+    # file /opt/aerospike/<another> # (optional) Location of data file on server.
+    filesize <SIZE>G                # Max size of each file in GiB.
+    data-in-memory true             # Indicates that all data should also be
+                                    # in memory.
+    }
+}
+
+namespace->set->bin->record
+
+
+INSERT INTO test.testset (PK, a, b) VALUES ('xyz', 'abc', 123)
+
+DELETE FROM <ns>[.<set>] WHERE PK=<key>
+DELETE FROM test.testset WHERE PK='xyz'
+
+OPERATE LIST_APPEND(listbin, 1), LIST_APPEND(listbin2, 10) ON test.demo where PK = 'key1'
+
+ OPERATE LIST_POP_RANGE(listbin, 1, 10) ON test.demo where PK = 'key1'
+https://www.aerospike.com/docs/tools/aql/record_operations.html
+
+SELECT * FROM test.testset where DIGEST='139FE89822B63DFC173AEA51CCF2EF091AB3129F'
+
+
+select * from alibaba.flights where startTime='8'
+
+SELECT * FROM alibaba.flights WHERE startTime='9' AND returnTime='13'
+
+set output json
+set key_send true
+set record_print_metadata true
+select * from alibaba.flights
+SELECT * FROM alibaba.flights where edigest="/p8EiMh1iv4KQFcKJwFgnQ58KK0="

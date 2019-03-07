@@ -1,0 +1,37 @@
+//install
+yum install Xvfb
+scp chromedriver   root@192.168.150.202:/home/irsa
+/home/irsa/jdk1.8.0_172
+
+
+
+first:
+copy chromedriver executable into the current directory
+cd /home/farshadnsh/Documents/jdk1.8.0_172/bin
+ ./java -jar /home/farshadnsh/Desktop/mrbilit.jar
+
+----------------------------------
+Xvfb &
+display server:
+
+
+step1)
+    Xvfb :1 -screen 5 1024x768x8 &
+    export DISPLAY=:1.5
+step2)
+./java -jar /home/farshadnsh/Desktop/mrbilit.jar
+
+./java -jar /home/farshadnsh/Desktop/safarme.jar
+
+
+
+scp concurrent.jar root@192.168.150.202:/home/irsa/deploy
+
+
+
+
+nohup java -jar concurrent.jar &
+
+
+scp queuemanager.jar  server1.jar   root@192.168.150.203:/home/farshad/deploy
+scp server2.jar  root@192.168.150.202:/home/irsa/deploy

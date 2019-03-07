@@ -1,0 +1,58 @@
+yum install keepalived
+
+
+java -jar keepalivedserver.jar "server2"
+
+service keepalived start
+
+systemctl start keepalived
+
+
+----------------------
+
+vrrp_script chk_script {
+script "/usr/local/bin/failover.sh"
+interval 2
+weight 2
+}
+
+
+vrrp_instance FarshadCrawlInstance {
+state BACKUP
+interface eth0
+virtual_router_id 8
+priority 100
+advert_int 1
+nopreempt
+vrrp_unicast_bind 10.10.10.8
+vrrp_unicast_peer 10.10.10.9
+virtual_ipaddress {
+        192.168.150.204
+        }
+notify  java -jar keepalivedserver.jar "server1"
+
+track_script {
+  chk_script weight 20
+}
+}
+
+=============
+
+vrrp_instance FarshadCrawlInstance {
+state BACKUP
+interface eth0
+virtual_router_id 8
+priority 99
+advert_int 1
+nopreempt
+vrrp_unicast_bind 10.10.10.8
+vrrp_unicast_peer 10.10.10.9
+virtual_ipaddress {
+        192.168.150.204
+        }
+notify  java -jar keepalivedserver.jar "server2"
+
+track_script {
+  chk_script weight 20
+}
+}

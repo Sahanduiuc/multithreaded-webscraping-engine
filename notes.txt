@@ -1,0 +1,85 @@
+1.8.0_171
+jdk1.8.0_171-amd64
+vi /etc/profile.d/java1.sh
+
+#!/bin/bash
+JAVA_HOME=/home/farshadnsh/Documents/jdk1.8.0_172
+PATH=$JAVA_HOME/bin:$PATH
+export PATH JAVA_HOME
+export CLASSPATH=.
+
+
+
+chmod +x /etc/profile.d/java1.sh
+source /etc/profile.d/java1.sh
+
+
+
+URL=https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+sudo yum install -y ${URL}
+//Run google-chrome-stable
+google-chrome-stable
+
+
+cat cpuinfo
+
+
+
+https://stackoverflow.com/questions/50642308/org-openqa-selenium-webdriverexception-unknown-error-devtoolsactiveport-file-d
+
+System.setProperty("webdriver.chrome.driver", "chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        driver = new ChromeDriver(options);
+
+ System.setProperty("webdriver.gecko.driver", "geckodriver");
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--headless");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            driver=new FirefoxDriver(options);
+
+
+free -m -h
+ps -A|grep chrome|wc -l
+ps -A|grep chrome|xargs kill
+top
+ntop
+itop
+
+
+crontab -l
+crontab -e
+# run everyday
+0 0 * * * java -jar concurrent.jar
+# run everyday at 2am
+0 2 * * * java -jar -Drir.name="ripe" /home/mkyong/crawler/whoiscrawler.jar
+# run every hour
+0 * * * * java -jar -Dlogback.configurationFile=/home/mkyong/logback.xml /home/mkyong/crawler/crawler.jar
+To run a job everyday 5 minutes after midnight, append the following:
+5 0 * * * /path/to/command
+So if we want to schedule the script to run at 1AM every Friday, we would need the following cronjob:
+0 1 * * 5 /bin/execute/this/script.sh
+Execute on workdays 1AM
+So if we want to schedule the script to Monday till Friday at 1 AM, we would need the following cronjob:
+0 1 * * 1-5 /bin/execute/this/script.sh
+What if you’d want to run something every 10 minutes? Well you could do this:
+But crontab allows you to do this as well:
+*/10 * * * * /bin/execute/this/script.sh
+2. Schedule a cron to execute twice a day.
+Below example command will execute at 5 AM and 5 PM daily. You can specify multiple time stamp by comma separated.
+0 5,17 * * * java -jar concurrent.jar
+
+
+
+
+floatingip using keepalive
+http://dasunhegoda.com/how-to-setup-haproxy-with-keepalived/833/
+
+
+javadoc -d C:/javadoc/test com.test
+
+javadoc -d /home/farshadnsh/Documents/myIrsaJavaProjects/farshad-queuemanager/ver8-queuemanager/src/main/java/model/service/concu
+rrentCrawl/orderdoc  CallableWithFieldsAndWebsites.java

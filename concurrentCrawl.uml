@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>model.service.concurrentCrawl</OriginalElement>
+  <nodes>
+    <node x="647.7410714285714" y="0.0">model.service.concurrentCrawl.doc</node>
+    <node x="297.1636904761905" y="0.0">model.service.concurrentCrawl.Order</node>
+    <node x="0.0" y="216.0">model.service.concurrentCrawl.CallableWithFieldsAndWebsites</node>
+    <node x="216.0" y="176.0">model.service.concurrentCrawl.QueueManager</node>
+    <node x="238.74107142857144" y="352.0">model.service.concurrentCrawl.FeedConcurrentByFeedback</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="model.service.concurrentCrawl.CallableWithFieldsAndWebsites" target="model.service.concurrentCrawl.Order">
+      <point x="-49.0" y="-23.0" />
+      <point x="49.0" y="126.0" />
+      <point x="310.7261904761905" y="126.0" />
+      <point x="-94.9375" y="53.0" />
+    </edge>
+    <edge source="model.service.concurrentCrawl.QueueManager" target="model.service.concurrentCrawl.Order">
+      <point x="94.66666666666669" y="-63.0" />
+      <point x="452.6666666666667" y="156.0" />
+      <point x="419.2261904761905" y="156.0" />
+      <point x="13.5625" y="53.0" />
+    </edge>
+    <edge source="model.service.concurrentCrawl.FeedConcurrentByFeedback" target="model.service.concurrentCrawl.CallableWithFieldsAndWebsites">
+      <point x="-136.5" y="-143.0" />
+      <point x="284.24107142857144" y="332.0" />
+      <point x="98.0" y="332.0" />
+      <point x="0.0" y="23.0" />
+    </edge>
+    <edge source="model.service.concurrentCrawl.FeedConcurrentByFeedback" target="model.service.concurrentCrawl.Order">
+      <point x="45.5" y="-143.0" />
+      <point x="466.24107142857144" y="332.0" />
+      <point x="521.5" y="332.0" />
+      <point x="521.5" y="136.0" />
+      <point x="473.4761904761905" y="136.0" />
+      <point x="67.8125" y="53.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="232.5" y="268.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
